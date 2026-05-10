@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C1 English Idioms — @xek_me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ============================
+   DESIGN TOKENS
+============================ */
+:root {
+  --ink: #0d0f14;
+  --ink-2: #181b22;
+  --ink-3: #22252f;
+  --line: rgba(255,255,255,0.07);
+  --line-med: rgba(255,255,255,0.12);
+  --text: #eef0f5;
+  --text-2: rgba(238,240,245,0.6);
+  --text-3: rgba(238,240,245,0.32);
+  --accent: #7eb8f7;       /* sky blue */
+  --accent-2: #a78bfa;     /* violet */
+  --green: #4ade80;
+  --green-bg: rgba(74,222,128,0.08);
+  --green-line: rgba(74,222,128,0.3);
+  --red: #f87171;
+  --red-bg: rgba(248,113,113,0.08);
+  --red-line: rgba(248,113,113,0.3);
+  --amber: #fbbf24;
+  --amber-bg: rgba(251,191,36,0.08);
+  --tg: #2AABEE;
+  --r: 14px;
+  --r-sm: 8px;
+  --shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+/* ============================
+   RESET
+============================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  min-height:100vh;
+  padding:0 0 5rem;
+  /* subtle grain texture */
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ============================
+   TOP NAV
+============================ */
+.topnav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1rem,4vw,2.5rem);
+  height:60px;
+  background:rgba(13,15,20,0.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+}
+.nav-logo{
+  width:34px;height:34px;
+  border-radius:9px;
+  background:linear-gradient(135deg,var(--tg),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.1),0 4px 12px rgba(42,171,238,0.3);
+  flex-shrink:0;
+}
+.nav-logo svg{width:18px;height:18px;fill:#fff;}
+.nav-title{
+  font-family:'Syne',sans-serif;
+  font-size:1rem;font-weight:800;
+  letter-spacing:-0.02em;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-badge{
+  display:flex;align-items:center;gap:6px;
+  padding:5px 12px;
+  border-radius:20px;
+  border:1px solid rgba(42,171,238,0.25);
+  background:rgba(42,171,238,0.07);
+  font-size:0.75rem;font-weight:600;
+  color:var(--tg);
+  text-decoration:none;
+  transition:all 0.2s;
+  white-space:nowrap;
+}
+.nav-badge:hover{background:rgba(42,171,238,0.14);border-color:rgba(42,171,238,0.4);}
+.nav-badge svg{width:13px;height:13px;fill:var(--tg);}
+
+/* ============================
+   HERO HEADER
+============================ */
+.hero{
+  padding:clamp(2rem,6vw,4rem) clamp(1rem,4vw,2.5rem) 2rem;
+  max-width:900px;margin:0 auto;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px;
+  border-radius:20px;
+  border:1px solid var(--line-med);
+  background:var(--ink-2);
+  font-size:0.72rem;font-weight:700;
+  color:var(--text-2);
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.hero-pill span{color:var(--accent);}
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.8rem,5vw,3rem);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  font-size:0.95rem;color:var(--text-2);
+  font-weight:300;line-height:1.7;
+  max-width:520px;
+}
+
+/* ============================
+   WRAPPER
+============================ */
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);}
+
+/* ============================
+   PROGRESS BAR
+============================ */
+.progress-block{
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:1.25rem 1.5rem;
+  margin-bottom:1.5rem;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1rem;
+  align-items:center;
+}
+.prog-stat{text-align:center;}
+.prog-stat-label{font-size:0.7rem;font-weight:600;color:var(--text-3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;}
+.prog-stat-val{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;}
+.prog-stat-val.green{color:var(--green);}
+.prog-stat-val.red{color:var(--red);}
+.prog-stat-val.blue{color:var(--accent);}
+.prog-bar-row{
+  grid-column:1/-1;
+  display:flex;flex-direction:column;gap:6px;
+}
+.prog-bar-labels{display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-3);}
+.prog-track{height:5px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+.prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  border-radius:4px;
+  transition:width 0.4s cubic-bezier(0.4,0,0.2,1);
+  width:0%;
+  position:relative;
+}
+.prog-fill::after{
+  content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:7px;height:7px;border-radius:50%;background:var(--accent-2);
+  box-shadow:0 0 6px var(--accent-2);
+}
+
+/* ============================
+   LEGEND
+============================ */
+.legend{
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:1rem 1.5rem;
+  margin-bottom:1.5rem;
+}
+.legend-label{font-size:0.68rem;font-weight:700;color:var(--text-3);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:10px;}
+.legend-tags{display:flex;flex-wrap:wrap;gap:6px;}
+
+/* ============================
+   TAGS
+============================ */
+.tag{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:600;
+  padding:3px 9px;border-radius:5px;
+  white-space:nowrap;letter-spacing:0.02em;
+}
+.tag-level{background:rgba(126,184,247,0.12);color:var(--accent);border:1px solid rgba(126,184,247,0.2);}
+.tag-common{background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);}
+.tag-less{background:rgba(251,191,36,0.1);color:var(--amber);border:1px solid rgba(251,191,36,0.2);}
+.tag-least{background:rgba(248,113,113,0.1);color:var(--red);border:1px solid rgba(248,113,113,0.2);}
+.tag-old{background:rgba(167,139,250,0.1);color:var(--accent-2);border:1px solid rgba(167,139,250,0.2);}
+.tag-writing{background:rgba(238,240,245,0.06);color:var(--text);border:1px solid var(--line-med);}
+.tag-topic{background:rgba(255,255,255,0.04);color:var(--text-3);border:1px solid var(--line);}
+
+/* ============================
+   SECTION DIVIDER
+============================ */
+.sec-label{
+  font-size:0.7rem;font-weight:700;color:var(--text-3);
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1rem;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line);}
+
+/* ============================
+   QUESTION CARD
+============================ */
+.qcard{
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:1.5rem;
+  margin-bottom:1rem;
+  transition:border-color 0.25s,box-shadow 0.25s;
+  position:relative;
+  overflow:hidden;
+}
+.qcard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-med),transparent);
+}
+.qcard.ok{border-color:var(--green-line);box-shadow:0 0 0 1px var(--green-line),0 4px 20px rgba(74,222,128,0.06);}
+.qcard.ng{border-color:var(--red-line);box-shadow:0 0 0 1px var(--red-line),0 4px 20px rgba(248,113,113,0.06);}
+
+.qnum{
+  font-size:0.67rem;font-weight:700;
+  color:var(--text-3);
+  letter-spacing:0.07em;text-transform:uppercase;
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.qnum-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--line-med);
+}
+.qtext{
+  font-size:1rem;font-weight:500;
+  line-height:1.65;
+  color:var(--text);
+  margin-bottom:1.1rem;
+  letter-spacing:-0.01em;
+}
+
+/* ============================
+   OPTIONS
+============================ */
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{
+  display:flex;align-items:center;gap:10px;
+  background:var(--ink-3);
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  padding:10px 14px;
+  cursor:pointer;
+  font-size:0.88rem;font-weight:400;
+  font-family:'DM Sans',sans-serif;
+  color:var(--text-2);
+  text-align:left;
+  width:100%;
+  transition:background 0.15s,border-color 0.15s,color 0.15s,transform 0.15s;
+  position:relative;overflow:hidden;
+}
+.opt:hover:not(:disabled){
+  background:rgba(126,184,247,0.06);
+  border-color:rgba(126,184,247,0.25);
+  color:var(--text);
+  transform:translateX(2px);
+}
+.opt-key{
+  width:22px;height:22px;min-width:22px;
+  border-radius:5px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--line-med);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.68rem;font-weight:700;
+  color:var(--text-3);
+  transition:all 0.15s;
+  font-family:'Syne',sans-serif;
+}
+.opt:hover:not(:disabled) .opt-key{
+  background:rgba(126,184,247,0.1);
+  border-color:rgba(126,184,247,0.3);
+  color:var(--accent);
+}
+/* States */
+.opt.correct{
+  background:var(--green-bg);
+  border-color:var(--green-line);
+  color:#d1fae5;
+}
+.opt.correct .opt-key{background:rgba(74,222,128,0.2);border-color:var(--green-line);color:var(--green);}
+.opt.wrong{
+  background:var(--red-bg);
+  border-color:var(--red-line);
+  color:#fee2e2;
+  animation:shake 0.4s ease;
+}
+.opt.wrong .opt-key{background:rgba(248,113,113,0.15);border-color:var(--red-line);color:var(--red);}
+.opt.reveal{
+  background:rgba(74,222,128,0.04);
+  border-color:rgba(74,222,128,0.2);
+  color:#bbf7d0;
+}
+.opt.reveal .opt-key{background:rgba(74,222,128,0.1);border-color:rgba(74,222,128,0.25);color:var(--green);}
+.opt:disabled{cursor:default;transform:none!important;}
+@keyframes shake{
+  0%,100%{transform:translateX(0);}
+  20%{transform:translateX(-6px);}
+  40%{transform:translateX(5px);}
+  60%{transform:translateX(-4px);}
+  80%{transform:translateX(3px);}
+}
+
+/* Feedback */
+.fb{
+  font-size:0.8rem;font-weight:500;
+  margin-top:10px;
+  padding:8px 12px;
+  border-radius:var(--r-sm);
+  display:none;
+  line-height:1.5;
+}
+.fb.ok{background:var(--green-bg);color:#86efac;border:1px solid var(--green-line);}
+.fb.ng{background:var(--red-bg);color:#fca5a5;border:1px solid var(--red-line);}
+
+/* ============================
+   RESULT CARD
+============================ */
+.result-top{
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:2.5rem 2rem;
+  text-align:center;
+  margin-top:1.5rem;
+  position:relative;overflow:hidden;
+}
+.result-top::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at top,rgba(126,184,247,0.06),transparent 60%);
+  pointer-events:none;
+}
+.result-score{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,10vw,5rem);
+  font-weight:800;
+  letter-spacing:-0.04em;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+  margin-bottom:6px;
+}
+.result-pct{font-size:0.9rem;color:var(--text-3);margin-bottom:16px;}
+.result-grade{
+  font-family:'Syne',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--text);
+  margin-bottom:1.5rem;
+}
+.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+  padding:11px 28px;
+  border-radius:var(--r-sm);
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#fff;border:none;
+  font-family:'Syne',sans-serif;
+  font-size:0.88rem;font-weight:700;
+  cursor:pointer;
+  transition:all 0.2s;
+  box-shadow:0 4px 16px rgba(126,184,247,0.2);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(126,184,247,0.3);}
+
+/* ============================
+   EXPLANATION SECTION
+============================ */
+.exp-section{
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:1.5rem;
+  margin-top:1.5rem;
+}
+.exp-title{
+  font-family:'Syne',sans-serif;
+  font-size:1rem;font-weight:700;
+  margin-bottom:1.25rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:8px;
+}
+.exp-title::before{
+  content:'';
+  display:block;width:4px;height:18px;
+  border-radius:2px;
+  background:linear-gradient(to bottom,var(--accent),var(--accent-2));
+}
+.exp-item{
+  display:flex;gap:14px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+  align-items:flex-start;
+}
+.exp-item:last-child{border-bottom:none;padding-bottom:0;}
+.exp-num{
+  width:28px;height:28px;min-width:28px;
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;
+  font-size:0.7rem;font-weight:800;
+  margin-top:2px;flex-shrink:0;
+}
+.exp-num.c{background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+.exp-num.w{background:var(--red-bg);color:var(--red);border:1px solid var(--red-line);}
+.exp-body{flex:1;min-width:0;}
+.exp-idiom{
+  font-family:'Syne',sans-serif;
+  font-size:0.9rem;font-weight:700;
+  color:var(--text);
+  margin-bottom:8px;
+}
+.exp-tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.exp-answer{
+  font-size:0.8rem;font-weight:600;
+  color:var(--green);
+  margin-bottom:8px;
+  display:flex;align-items:center;gap:5px;
+}
+.exp-answer::before{content:'✓';font-size:0.75rem;}
+.exp-meaning{
+  font-size:0.85rem;color:var(--text-2);
+  line-height:1.7;margin-bottom:8px;
+}
+.exp-example{
+  font-size:0.83rem;color:var(--text-2);
+  line-height:1.7;
+  background:var(--ink-3);
+  border-left:2px solid var(--accent);
+  padding:8px 12px;
+  border-radius:0 6px 6px 0;
+  margin-bottom:8px;
+  font-style:italic;
+}
+.exp-usage{
+  font-size:0.78rem;color:var(--text-3);
+  line-height:1.7;
+  background:rgba(251,191,36,0.04);
+  border:1px solid rgba(251,191,36,0.12);
+  border-radius:6px;
+  padding:8px 12px;
+}
+.exp-usage strong{color:var(--amber);font-weight:600;}
+
+/* ============================
+   FOOTER
+============================ */
+.site-footer{
+  text-align:center;
+  padding:3rem 1rem 1rem;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.footer-brand{
+  display:flex;align-items:center;gap:8px;
+  text-decoration:none;
+}
+.footer-brand .f-logo{
+  width:28px;height:28px;border-radius:7px;
+  background:linear-gradient(135deg,var(--tg),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+}
+.footer-brand .f-logo svg{width:15px;height:15px;fill:#fff;}
+.footer-brand span{
+  font-family:'Syne',sans-serif;
+  font-size:0.88rem;font-weight:700;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.footer-copy{font-size:0.72rem;color:var(--text-3);}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media(max-width:600px){
+  .progress-block{grid-template-columns:1fr 1fr 1fr;}
+  .prog-stat-val{font-size:1.2rem;}
+  .hero h1{font-size:1.6rem;}
+}
+@media(max-width:380px){
+  .progress-block{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <a class="nav-brand" href="https://t.me/xek_me" target="_blank">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 1 0 24 12 12.014 12.014 0 0 0 11.944 0Zm5.96 8.178-2.029 9.556c-.154.68-.553.847-1.121.527l-3.1-2.284-1.5 1.442c-.164.165-.303.303-.62.303l.222-3.138 5.693-5.139c.248-.22-.054-.342-.384-.122L8.035 14.5l-3.042-.948c-.66-.207-.674-.66.139-.975l11.882-4.581c.55-.201 1.03.122.89.182Z"/></svg>
+    </div>
+    <span class="nav-title">@xek_me</span>
+  </a>
+  <a class="nav-badge" href="https://t.me/xek_me" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 1 0 24 12 12.014 12.014 0 0 0 11.944 0Zm5.96 8.178-2.029 9.556c-.154.68-.553.847-1.121.527l-3.1-2.284-1.5 1.442c-.164.165-.303.303-.62.303l.222-3.138 5.693-5.139c.248-.22-.054-.342-.384-.122L8.035 14.5l-3.042-.948c-.66-.207-.674-.66.139-.975l11.882-4.581c.55-.201 1.03.122.89.182Z"/></svg>
+    Telegram
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pill">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <span>Advanced</span> English · C1 Level
+  </div>
+  <h1>English <em>Idioms</em> Test</h1>
+  <p class="hero-sub">65 carefully selected C1-level idioms with detailed explanations, usage tips, and example sentences.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="wrap">
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-label">Legend</div>
+    <div class="legend-tags">
+      <span class="tag tag-level">C1 / B2+ Level</span>
+      <span class="tag tag-common">✓ Common</span>
+      <span class="tag tag-less">● Less Common</span>
+      <span class="tag tag-least">△ Least Common</span>
+      <span class="tag tag-old">☆ Old-Fashioned</span>
+      <span class="tag tag-writing">✎ Suitable for Writing</span>
+      <span class="tag tag-topic">Topic Area</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-block">
+    <div class="prog-stat">
+      <div class="prog-stat-label">Answered</div>
+      <div class="prog-stat-val blue" id="s-ans">0/65</div>
+    </div>
+    <div class="prog-stat">
+      <div class="prog-stat-label">Correct</div>
+      <div class="prog-stat-val green" id="s-cor">0</div>
+    </div>
+    <div class="prog-stat">
+      <div class="prog-stat-label">Wrong</div>
+      <div class="prog-stat-val red" id="s-wrg">0</div>
+    </div>
+    <div class="prog-bar-row">
+      <div class="prog-bar-labels">
+        <span>Progress</span>
+        <span id="prog-pct">0%</span>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="pbar"></div></div>
+    </div>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="sec-label">Choose the correct meaning for each idiom</div>
+  <div id="questions"></div>
+  <div id="result" style="display:none"></div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <a class="footer-brand" href="https://t.me/xek_me" target="_blank">
+    <div class="f-logo">
+      <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 1 0 24 12 12.014 12.014 0 0 0 11.944 0Zm5.96 8.178-2.029 9.556c-.154.68-.553.847-1.121.527l-3.1-2.284-1.5 1.442c-.164.165-.303.303-.62.303l.222-3.138 5.693-5.139c.248-.22-.054-.342-.384-.122L8.035 14.5l-3.042-.948c-.66-.207-.674-.66.139-.975l11.882-4.581c.55-.201 1.03.122.89.182Z"/></svg>
+    </div>
+    <span>@xek_me</span>
+  </a>
+  <div class="footer-copy">C1 English Idioms Test · 👨🏼‍💻Coder: Murodjon Abdullayev</div>
+</footer>
+
+<script>
+var T=65;
+var qs=[
+  {q:'"A bit" means _____.', opts:['Some thing to eat','A small amount','To help someone'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Everyday Conversation','Informal Speech','Degree & Quantity'],
+   meaning:'A bit means a small quantity or degree of something — not a lot, but enough to notice.',
+   example:'"Could you turn the music down a bit? It\'s too loud." / "I\'m a bit tired today, so I might leave early."',
+   usage:'<strong>Usage tip:</strong> Extremely common in informal British English. "A bit" softens complaints or criticism — "That was a bit rude!" sounds less harsh than "That was rude!" Avoid in formal academic writing.'},
+  {q:'"About time" means _____.', opts:['At the right time','Soon','At last'], ans:2,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Everyday Conversation','Expressing Frustration','Time'],
+   meaning:'"About time" expresses mild frustration or relief that something has finally happened — it should have occurred sooner.',
+   example:'"It\'s about time you called! I\'ve been waiting for hours." / "About time — I\'ve been standing in this queue for 20 minutes!"',
+   usage:'<strong>Usage tip:</strong> Said with a tone of impatience. "High time" is stronger: "It\'s high time we left." Both are informal; avoid in formal essays.'},
+  {q:'"Across the board" means _____.', opts:['Everyone or everything is included','To travel between countries','Uninteresting'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Economics','Politics','Management'],
+   meaning:'"Across the board" means applying equally to all members of a group, with no exceptions.',
+   example:'"The company announced a 10% pay increase across the board." / "Prices have risen across the board this year."',
+   usage:'<strong>Usage tip:</strong> Originally from horse racing. Now standard in journalism, business reports, and academic writing. One of the few idioms fully acceptable in formal written English.'},
+  {q:'To "act up" means _____.', opts:['To share an idea','To behave badly','To pretend to be rich'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Behaviour','Parenting','Technology','Health'],
+   meaning:'"Act up" means to misbehave or malfunction — used for people, children, or machines that stop working properly.',
+   example:'"The children started acting up as soon as the babysitter arrived." / "My knee has been acting up again since the cold weather."',
+   usage:'<strong>Usage tip:</strong> Works for both people and things. "My laptop is acting up" = malfunctioning. Informal; do not use in academic writing.'},
+  {q:'A man "after my own heart" means _____.', opts:['Liking the same things as me','Looks like me','Follows me'], ans:0,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Personality','Relationships','Compliments'],
+   meaning:'Someone "after your own heart" shares your values, tastes, or personality in a way you find pleasing and admirable.',
+   example:'"He ordered the biggest pizza on the menu — a man after my own heart!" / "She stayed late to finish the report. A woman after my own heart."',
+   usage:'<strong>Usage tip:</strong> Always a compliment. Works for both men and women despite the traditional phrasing. Informal and conversational.'},
+  {q:'"Against the clock" means _____.', opts:['A new record','A test of speed or time','An impossible task'], ans:1,
+   level:'C1', freq:'common', writing:true,
+   topics:['Work','Sports','Deadlines','Pressure'],
+   meaning:'"Against the clock" means racing to do something before a deadline, with time as the main pressure.',
+   example:'"The surgeons worked against the clock to save the patient." / "We were racing against the clock to submit the project before midnight."',
+   usage:'<strong>Usage tip:</strong> Acceptable in journalism and semi-formal writing. "Race against time" is a close synonym. Conveys urgency and high stakes.'},
+  {q:'"All along" means _____.', opts:['All the time','To agree','Altogether'], ans:0,
+   level:'B2+', freq:'common', writing:true,
+   topics:['Narrative','Revelation','General Use'],
+   meaning:'"All along" means from the very beginning and continuously throughout — the whole time, without interruption.',
+   example:'"I knew all along that he was lying." / "She had the key all along — it was in her pocket the entire time."',
+   usage:'<strong>Usage tip:</strong> Used when revealing a truth that existed from the start. Common in both spoken and written narrative English.'},
+  {q:'"All hours" means _____.', opts:['At regular times','At irregular times','Every hour'], ans:1,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Work-Life Balance','Lifestyle','Criticism'],
+   meaning:'"All hours" refers to unusual or very late times — times when most people are not awake or working.',
+   example:'"He works all hours to support his family." / "She keeps coming home at all hours — sometimes not until 3am."',
+   usage:'<strong>Usage tip:</strong> Often carries disapproval. "Working all hours" = overworking. "Coming home at all hours" = staying out irresponsibly late. Informal.'},
+  {q:'"Along in years" means _____.', opts:['Getting old','Getting tired','Becoming successful'], ans:0,
+   level:'C1', freq:'old-fashioned', writing:true,
+   topics:['Age','Family','Polite Speech'],
+   meaning:'"Along in years" is a polite, gentle euphemism for saying someone is becoming old or elderly.',
+   example:'"My grandmother is getting along in years, but she\'s still very sharp." / "He\'s along in years now, but still walks to the market every day."',
+   usage:'<strong>Usage tip:</strong> Tactful and respectful — more polite than "old." Slightly old-fashioned today, but still used in literary and formal writing. Suitable for formal contexts.'},
+  {q:'"And then some" means _____.', opts:['Not many','And only a few','And a lot more'], ans:2,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Emphasis','Quantity','American English'],
+   meaning:'"And then some" means the actual amount is even greater than stated — and considerably more on top.',
+   example:'"She worked 60 hours this week, and then some." / "He ate his meal and then some — he finished everyone else\'s leftovers too."',
+   usage:'<strong>Usage tip:</strong> Primarily American English. Adds emphasis and exaggeration. Informal; avoid in formal academic writing.'},
+  {q:'A "babe in the woods" means _____.', opts:['Someone who cuts trees','Someone who is young','Someone who is innocent'], ans:2,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Naivety','Experience','Vulnerability','Character'],
+   meaning:'A "babe in the woods" is someone naive, inexperienced, and innocent — easily taken advantage of in a complex world.',
+   example:'"When she joined the law firm, she was a complete babe in the woods." / "Don\'t let him negotiate alone — he\'s a babe in the woods."',
+   usage:'<strong>Usage tip:</strong> Refers to innocence and vulnerability, not necessarily youth. Suitable for semi-formal writing such as opinion columns and literary prose.'},
+  {q:'To "back down" means _____.', opts:['To give up a claim','To sit down','To fight for something'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Negotiation','Conflict','Politics','Leadership'],
+   meaning:'"Back down" means to withdraw from a position or demand — to stop insisting on something, usually under pressure.',
+   example:'"The government backed down from its controversial policy after protests." / "He refused to back down even when everyone disagreed."',
+   usage:'<strong>Usage tip:</strong> Common in political journalism and business writing. Can imply either sensible compromise or weakness. Opposite: "stand your ground."'},
+  {q:'To "back out" means _____.', opts:['To support someone','To be trapped','To get out of an agreement'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Agreements','Reliability','Law'],
+   meaning:'"Back out" means to withdraw from a commitment or agreement — especially at the last minute.',
+   example:'"He backed out of the deal just hours before the signing." / "She agreed to help but then backed out at the last minute."',
+   usage:'<strong>Usage tip:</strong> Implies breaking a prior commitment. Often negative — suggests unreliability. Acceptable in business and journalism writing. Similar to "pull out of."'},
+  {q:'A "bad trip" means _____.', opts:['To lose money','An unpleasant drug experience','To be unsuccessful'], ans:1,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Informal Speech','Negative Experiences','Slang'],
+   meaning:'Originally a frightening drug experience; now broadly used to describe any deeply unpleasant or traumatic situation.',
+   example:'"That meeting was a bad trip from start to finish." / "His first skydive was a real bad trip — everything went wrong."',
+   usage:'<strong>Usage tip:</strong> Originated in 1960s drug culture; now colloquial slang. Informal only — never appropriate in formal or academic writing.'},
+  {q:'"He didn\'t bat an eye" means the same as _____.', opts:['He didn\'t see','He wasn\'t happy','He didn\'t show surprise'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Emotion','Reaction','Character','Narrative'],
+   meaning:'"Didn\'t bat an eye" means to show absolutely no reaction or surprise — remaining completely calm and unmoved.',
+   example:'"When told he\'d won a million pounds, he didn\'t bat an eye." / "She fired three people without batting an eye."',
+   usage:'<strong>Usage tip:</strong> Can imply admirable calm or cold indifference, depending on context. "Without batting an eyelid" is equally common. Usable in literary and journalistic writing.'},
+  {q:'To "bear in mind" means _____.', opts:['To forget something','To be crazy','To remember something'], ans:2,
+   level:'B2+', freq:'common', writing:true,
+   topics:['Academic Writing','Business','General Advice','Formal English'],
+   meaning:'"Bear in mind" means to keep something in memory and consider it when making decisions or taking action.',
+   example:'"Bear in mind that the office will be closed on Friday." / "Bear in mind that some roads may be flooded when planning your route."',
+   usage:'<strong>Usage tip:</strong> One of the most widely used idioms in formal and academic writing. Perfectly appropriate in essays, reports, and professional emails. More formal than "remember that."'},
+  {q:'To "beat around the bush" means _____.', opts:['To not know','To go on a hike','To avoid a question'], ans:2,
+   level:'C1', freq:'common', writing:false,
+   topics:['Communication','Negotiation','Honesty','Criticism'],
+   meaning:'"Beat around the bush" means talking around a subject without reaching the main point — avoiding directness.',
+   example:'"Stop beating around the bush and just tell me what happened!" / "He spent ten minutes beating around the bush before asking for a raise."',
+   usage:'<strong>Usage tip:</strong> Often used as a command: "Don\'t beat around the bush." Informal; from hunting, where beaters drove birds toward hunters. Avoid in formal writing.'},
+  {q:'To "beef up" means _____.', opts:['To go crazy','To have fun','To make something stronger'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Security','Fitness','Improvement'],
+   meaning:'"Beef up" means to make something stronger, bigger, or more substantial — to add power or quality.',
+   example:'"The government plans to beef up border security." / "We need to beef up our marketing strategy to stay competitive."',
+   usage:'<strong>Usage tip:</strong> Widely used in journalism and business contexts. Acceptable in semi-formal writing. "He beefed up at the gym" = became more muscular.'},
+  {q:'"Behind the scenes" means _____.', opts:['In a different place','Privately','In a difficult position'], ans:1,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Media','Politics','Theatre','Events'],
+   meaning:'"Behind the scenes" refers to activities happening privately, not visible to the public or audience.',
+   example:'"A lot of hard work goes on behind the scenes before a film is released." / "The real negotiations happened behind the scenes."',
+   usage:'<strong>Usage tip:</strong> From theatre — literally backstage. Now standard in journalism, media, and business writing. Frequently seen in published articles and reports.'},
+  {q:'"Below the belt" means _____.', opts:['Good','Secretly','Unfairly'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Ethics','Debate','Conflict','Sports','Criticism'],
+   meaning:'"Below the belt" describes an unfair, cruel, or unsporting action or remark — one that violates the rules of decent conduct.',
+   example:'"Bringing up his past mistakes during the debate was below the belt." / "That comment about her appearance was completely below the belt."',
+   usage:'<strong>Usage tip:</strong> From boxing — hitting below the waistband is illegal. Common in political journalism and opinion writing. Appropriate in semi-formal written contexts.'},
+  {q:'To "call it a day" means _____.', opts:['To quit','It becomes evening','To say good morning'], ans:0,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Work','Business','Retirement','Daily Life'],
+   meaning:'"Call it a day" means to stop working or doing something — either because enough is done or energy is spent.',
+   example:'"We\'ve been painting for six hours — let\'s call it a day." / "After 30 years, she decided to call it a day and retire."',
+   usage:'<strong>Usage tip:</strong> Works for ending a workday, a project, or a career. "Call it a night" is used for stopping in the evening. Both are informal; avoid in formal reports.'},
+  {q:'To "call the tune" means _____.', opts:['To sing a song','To give orders','To give advice'], ans:1,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Power','Business','Politics','Leadership'],
+   meaning:'"Call the tune" means to be the person in control who makes the decisions.',
+   example:'"It\'s the investors who call the tune in this company." / "In their relationship, it\'s clear that she calls the tune."',
+   usage:'<strong>Usage tip:</strong> From the proverb "He who pays the piper calls the tune." Common in political and business journalism. Suitable for semi-formal writing.'},
+  {q:'To "carry off" means _____.', opts:['To move','To kill','To drop'], ans:0,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Achievement','Performance','Skill','Challenge'],
+   meaning:'"Carry off" means to succeed in doing something difficult — to pull it off with skill and confidence.',
+   example:'"She carried off the lead role brilliantly despite having no experience." / "It was a risky speech, but he carried it off perfectly."',
+   usage:'<strong>Usage tip:</strong> Implies grace under pressure. Usable in literary, journalistic, and semi-formal writing. Can also literally mean to take something away by force.'},
+  {q:'To put the "cart before the horse" means _____.', opts:['To plan ahead','That you can\'t do something','To do things in the wrong order'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Planning','Logic','Business','Strategy'],
+   meaning:'"Cart before the horse" means doing things in the wrong logical order — putting a later step before an earlier one.',
+   example:'"Buying gym clothes before deciding to exercise is putting the cart before the horse." / "They\'re celebrating before the contract is signed — that\'s cart before the horse."',
+   usage:'<strong>Usage tip:</strong> One of the most recognised idioms in English. Suitable for academic, business, and opinion writing. Emphasises the importance of logical sequence.'},
+  {q:'To "catch on" means _____.', opts:['To understand','To be punished','To grab something'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Trends','Learning','Business','Technology','Popular Culture'],
+   meaning:'"Catch on" means either (1) to understand something, or (2) to become popular or fashionable.',
+   example:'"It took me a while to catch on to what he meant." / "The new app caught on quickly and gained a million users in a week."',
+   usage:'<strong>Usage tip:</strong> Context determines meaning. Both senses are common in journalism and semi-formal writing. "Catching on" used for trends is especially frequent in business media.'},
+  {q:'To be "caught short" means _____.', opts:['To be in an embarrassing situation','To take a short sleep','Not to have enough of something when needed'], ans:2,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Finance','Everyday Situations','Preparedness'],
+   meaning:'"Caught short" means suddenly finding yourself without enough of something essential — usually money — at a critical moment.',
+   example:'"I was caught short at the checkout — I\'d forgotten my wallet." / "Many businesses were caught short when the supply chain collapsed."',
+   usage:'<strong>Usage tip:</strong> Most commonly about money. In British slang, it also means urgently needing a toilet with no facilities nearby. Informal; not for formal writing.'},
+  {q:'"Cheap skate" means _____.', opts:['A winter sports activity','Someone who doesn\'t spend much money','Something that isn\'t expensive'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Money','Personality','Criticism'],
+   meaning:'A "cheapskate" is someone excessively unwilling to spend money — even when spending would be reasonable or expected.',
+   example:'"He never buys a round of drinks — what a cheapskate." / "Don\'t be a cheapskate — it\'s her birthday!"',
+   usage:'<strong>Usage tip:</strong> Stronger and more judgmental than "frugal" or "thrifty." From 19th-century American slang. Informal only; never use in formal writing.'},
+  {q:'To "check up" means _____.', opts:['To search','To investigate','To make a mark to show something has been counted'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Health','Management','Supervision','Relationships'],
+   meaning:'"Check up on" means to investigate or monitor someone or something — to verify that all is correct.',
+   example:'"The manager checks up on staff performance every quarter." / "She called to check up on her elderly mother."',
+   usage:'<strong>Usage tip:</strong> A "check-up" (noun) is a medical examination. "Checking up on someone" can sound either caring or suspicious depending on tone. Informal.'},
+  {q:'To "cheer up" means _____.', opts:['To become happy','To become sad','To become lost'], ans:0,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Emotion','Mental Health','Relationships'],
+   meaning:'"Cheer up" means to become happier or to help someone else feel better after sadness or worry.',
+   example:'"Cheer up — the weekend is almost here!" / "I bought her flowers to cheer her up after her difficult week."',
+   usage:'<strong>Usage tip:</strong> Used as a command ("Cheer up!") or an action ("I tried to cheer him up"). Telling someone to cheer up can feel dismissive if their problem is serious. Informal.'},
+  {q:'"Chicken feed" means _____.', opts:['A lot of food','A small amount of money','A group of people gathering together'], ans:1,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Finance','Business','Salary','Criticism'],
+   meaning:'"Chicken feed" describes an amount of money so small it is considered trivial or insignificant.',
+   example:'"The bonus was chicken feed compared to what the executives got." / "He works incredibly hard for what is essentially chicken feed."',
+   usage:'<strong>Usage tip:</strong> Always about money. Always dismissive. The comparison to food for chickens emphasises how little it is. Informal; better avoided in formal writing.'},
+  {q:'I "dare say" means _____.', opts:['I don\'t know at all','I definitely know','I suppose'], ans:2,
+   level:'C1', freq:'old-fashioned', writing:true,
+   topics:['Formal Opinion','British English','Polite Expression','Academic Writing'],
+   meaning:'"I dare say" politely expresses that something is probably true — a gentle way of supposing or guessing.',
+   example:'"I dare say she\'ll be late — she always is." / "It\'s not perfect, but I dare say it\'s good enough to submit."',
+   usage:'<strong>Usage tip:</strong> Formal and old-fashioned British expression. Softens an opinion: "I dare say" = "I suppose/imagine." Suitable for formal and written English, though increasingly rare in spoken use.'},
+  {q:'To "dash off" means _____.', opts:['To do, make, or draw something quickly','To be deeply asleep','To be precise'], ans:0,
+   level:'C1', freq:'common', writing:false,
+   topics:['Work','Communication','Speed','Writing'],
+   meaning:'"Dash off" means to write or complete something very quickly and without careful thought.',
+   example:'"She dashed off a quick email before running to her meeting." / "He dashed off a sketch of the building in under five minutes."',
+   usage:'<strong>Usage tip:</strong> Implies speed over quality. "Dashing off" a note = writing hurriedly. Can also mean to leave suddenly: "I have to dash off — I\'m already late!" Informal.'},
+  {q:'"Dead tired" means _____.', opts:['No longer living','Very tired','Someone doesn\'t have long to live'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Health','Emotion','Lifestyle','Fatigue'],
+   meaning:'"Dead tired" means completely and utterly exhausted — so tired you have almost no energy left.',
+   example:'"After the 14-hour flight, I was absolutely dead tired." / "She was dead tired but still stayed up to finish the report."',
+   usage:'<strong>Usage tip:</strong> "Dead" is an intensifier meaning "completely." Similar: "dead quiet," "dead certain," "dead right." Very common in informal spoken English. Not for formal writing.'},
+  {q:'To be in "deep water" means _____.', opts:['To be lazy','To be in serious trouble','To not care about things'], ans:1,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Finance','Conflict','Problems','Law'],
+   meaning:'"In deep water" means to be in a situation of serious difficulty or trouble — often hard to escape from.',
+   example:'"He\'s in deep water with the bank after missing three loan payments." / "If you miss this deadline, you\'ll be in deep water with the client."',
+   usage:'<strong>Usage tip:</strong> The metaphor of struggling to stay afloat captures the danger vividly. Common in journalism and semi-formal writing. "Out of your depth" is a related expression.'},
+  {q:'If something "dies down", it means it _____.', opts:['Falls over','Dies quickly','Fades away'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Weather','Conflict','Media','Events','Noise'],
+   meaning:'"Die down" means to gradually become less intense or active — to fade away slowly rather than stop suddenly.',
+   example:'"The storm died down around midnight." / "The controversy finally died down after the CEO apologised."',
+   usage:'<strong>Usage tip:</strong> Used for storms, noise, controversy, and excitement. Emphasises gradual reduction. Common in journalism. Suitable for semi-formal writing.'},
+  {q:'To "die out" means _____.', opts:['To fail','To die quickly','To disappear slowly'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Environment','Culture','Language','History','Biology'],
+   meaning:'"Die out" means to become extinct or cease to exist completely — used for species, traditions, and languages.',
+   example:'"Many indigenous languages are dying out as younger generations stop speaking them." / "The tradition of handwritten letters has nearly died out."',
+   usage:'<strong>Usage tip:</strong> Unlike "die down" (temporary), "die out" implies permanent disappearance. Common in academic and environmental writing. "Go extinct" is the formal scientific synonym.'},
+  {q:'A "dime a dozen" means _____.', opts:['It is expensive','Something is unusual','Something is easy to get'], ans:2,
+   level:'C1', freq:'less-common', writing:false,
+   topics:['Business','Competition','American English','Value'],
+   meaning:'"Dime a dozen" means something is so common and plentiful that it is not special or valuable.',
+   example:'"Good ideas are a dime a dozen — what matters is execution." / "Talented guitarists are a dime a dozen in Nashville."',
+   usage:'<strong>Usage tip:</strong> American English in origin — a dime (10 cents) once bought twelve items. Used to dismiss something as ordinary. Informal; avoid in formal British writing.'},
+  {q:'To "dish out" means _____.', opts:['To serve','To gossip','To make'], ans:0,
+   level:'C1', freq:'common', writing:false,
+   topics:['Food','Management','Criticism','Distribution'],
+   meaning:'"Dish out" means to distribute or give something freely — originally food, now also criticism, advice, or punishment.',
+   example:'"The charity dished out free meals to hundreds of people." / "He loves dishing out criticism but can\'t handle receiving it."',
+   usage:'<strong>Usage tip:</strong> "Can dish it out but can\'t take it" = criticises others but reacts badly to criticism themselves. Informal; not suitable for formal writing.'},
+  {q:'To "do away with" something means _____.', opts:['To treat something','To stop something','To hide something'], ans:1,
+   level:'C1', freq:'common', writing:true,
+   topics:['Policy','Reform','Business','Law','Social Change'],
+   meaning:'"Do away with" means to abolish or eliminate something completely — to end its existence permanently.',
+   example:'"The new government plans to do away with the old tax system." / "Many schools have done away with strict uniform policies."',
+   usage:'<strong>Usage tip:</strong> Used for rules, systems, and institutions. More forceful than "remove." Common in political and academic writing. Note: informally "do away with someone" can mean to kill them.'},
+  {q:'If someone is "down to earth", he is _____.', opts:['Strange','Practical','Shy'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Personality','Character','Relationships','Compliments'],
+   meaning:'"Down to earth" describes a practical, sensible, and unpretentious person — not arrogant despite their success.',
+   example:'"Despite being famous, he\'s remarkably down to earth." / "I like her because she\'s down to earth and gives honest advice."',
+   usage:'<strong>Usage tip:</strong> Always a compliment. Often used to contrast with someone\'s high status. Very common in spoken English and informal profiles. Better avoided in formal academic writing.'},
+  {q:'"Easy does it" means _____.', opts:['Let\'s do it later','Let\'s do it carefully','Let\'s do it quickly'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Safety','Advice','Recovery','Daily Life'],
+   meaning:'"Easy does it" is an instruction to slow down and proceed with gentleness and care.',
+   example:'"Easy does it — that box contains fragile equipment." / "Easy does it! You\'re moving the sofa too fast."',
+   usage:'<strong>Usage tip:</strong> Used as a gentle warning or encouragement. Also a famous motto in Alcoholics Anonymous, meaning "don\'t rush your recovery." Very informal.'},
+  {q:'To "eat your words" means _____.', opts:['To apologize','To shout loudly','To be quiet'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Humility','Prediction','Conflict','Communication'],
+   meaning:'"Eat your words" means to be forced to retract something you confidently stated because events proved you wrong.',
+   example:'"He laughed when she said she\'d be promoted, but had to eat his words six months later." / "I said it would never work — now I\'m eating my words."',
+   usage:'<strong>Usage tip:</strong> Often used with "have to" or "make someone." Implies embarrassment and humiliation. Acceptable in opinion and journalistic writing for rhetorical effect.'},
+  {q:'To "eat out" means _____.', opts:['To rot away','To eat in a restaurant','To eat everything'], ans:1,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Food','Lifestyle','Social Life'],
+   meaning:'"Eat out" means to have a meal at a restaurant rather than cooking and eating at home.',
+   example:'"We eat out every Friday evening as a family treat." / "Eating out has become much more expensive this year."',
+   usage:'<strong>Usage tip:</strong> A very common everyday phrase. "Eat in" = stay at home. "Takeaway/takeout" = buy food from a restaurant but eat it elsewhere. Informal.'},
+  {q:'To "edge out" means _____.', opts:['To move in slowly','With the narrow side outwards','To force out'], ans:2,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Business','Competition','Sports','Strategy'],
+   meaning:'"Edge out" means to gradually force a competitor out of a position through superior performance.',
+   example:'"The new smartphone edged out its rivals to become the best-seller." / "She was quietly edged out of her role by a younger colleague."',
+   usage:'<strong>Usage tip:</strong> Implies a gradual process, not a sudden defeat. Common in business and sports journalism. Also means to win by a very small margin. Suitable for semi-formal writing.'},
+  {q:'To "eke out" means _____.', opts:['To rush out','To do with difficulty','To make easily'], ans:1,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Finance','Survival','Poverty','Competition','Achievement'],
+   meaning:'"Eke out" means to manage with great difficulty, stretching limited resources as far as they will go.',
+   example:'"The family eked out a living from their small farm." / "She eked out a narrow win in the final round."',
+   usage:'<strong>Usage tip:</strong> Suggests hardship and struggle. "Eking out a living" = barely surviving. "Eke out a win" = win by the smallest margin. Suitable for literary and journalistic writing.'},
+  {q:'"En masse" means _____.', opts:['One by one','Nobody','As a group'], ans:2,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Politics','Labour','Events','Collective Action'],
+   meaning:'"En masse" (French: "in a mass") means all together as a large group, simultaneously.',
+   example:'"The employees resigned en masse to protest conditions." / "Fans turned up en masse to support the team."',
+   usage:'<strong>Usage tip:</strong> A formal-sounding phrase from French. Common in journalism and academic writing. Emphasises collective action — many people acting at the same time. Pronounced "on mass."'},
+  {q:'If you "keep an eye out" it means _____.', opts:['Watch carefully','You are in charge','You don\'t pay attention'], ans:0,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Safety','Observation','Security','General Advice'],
+   meaning:'"Keep an eye out" means to watch carefully and attentively for something or someone.',
+   example:'"Keep an eye out for any suspicious activity." / "Can you keep an eye out for my bag? I\'ll be back in five minutes."',
+   usage:'<strong>Usage tip:</strong> Used as a request or instruction. "Keep your eyes peeled" is a more informal version. "Keep an eye on someone" (supervise them) is slightly different. Informal.'},
+  {q:'To "eat like a horse" means _____.', opts:['To eat noisily','To eat a little','To eat a lot'], ans:2,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Food','Health','Personality','Humour'],
+   meaning:'"Eat like a horse" means to eat very large amounts of food — to have a huge and seemingly endless appetite.',
+   example:'"My teenage son eats like a horse — the fridge is always empty." / "She\'s tiny but eats like a horse — I don\'t know where she puts it all."',
+   usage:'<strong>Usage tip:</strong> Always refers to quantity, not speed or noise. "Eat like a bird" is the opposite — eating very little. Informal; humorous in tone.'},
+  {q:'To "egg on" means _____.', opts:['To eat enough','To encourage','To annoy'], ans:1,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Behaviour','Peer Pressure','Social Influence','Psychology'],
+   meaning:'"Egg on" means to encourage or provoke someone to do something — often something risky or unwise.',
+   example:'"His friends egged him on to jump into the fountain." / "She was egged on by the crowd to keep going."',
+   usage:'<strong>Usage tip:</strong> Implies peer pressure and goading rather than purely positive encouragement. The push often leads to regrettable decisions. Usable in literary and journalistic writing.'},
+  {q:'To "ease up" means _____.', opts:['To make less nervous','To increase pressure','To go faster'], ans:0,
+   level:'C1', freq:'common', writing:false,
+   topics:['Stress','Management','Weather','Health','Work-Life Balance'],
+   meaning:'"Ease up" means to reduce the intensity of pressure, effort, or strictness — to become less demanding.',
+   example:'"You need to ease up on yourself — you\'ve been working seven days a week." / "The rain finally eased up in the afternoon."',
+   usage:'<strong>Usage tip:</strong> Works for people, weather, pain, and pressure. "Ease off" is a very close synonym. Also used in driving: "ease up on the accelerator." Informal.'},
+  {q:'To "face the music" means _____.', opts:['Accept your punishment','Listen carefully','Ask a lot of questions'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Responsibility','Consequences','Leadership','Ethics'],
+   meaning:'"Face the music" means to accept responsibility for something wrong and deal with the consequences bravely.',
+   example:'"After months of avoiding his manager, he finally faced the music." / "It\'s time to face the music — we\'ve missed our targets."',
+   usage:'<strong>Usage tip:</strong> Implies courage in facing deserved consequences. May originate from soldiers being drummed out of service. Common in journalism, opinion writing, and business contexts.'},
+  {q:'When it\'s "fair and square" it\'s _____.', opts:['Unusual','Confused','Honest'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Ethics','Sports','Law','Business','Competition'],
+   meaning:'"Fair and square" means done in a completely honest, legitimate, and straightforward way — no cheating involved.',
+   example:'"He won the championship fair and square." / "I bought this car fair and square, so there\'s no dispute."',
+   usage:'<strong>Usage tip:</strong> Often used to defend the legitimacy of a result. Both words mean "honest/even," doubling the emphasis. Common in sports, business, and legal writing.'},
+  {q:'To "fall behind" means to _____.', opts:['Not keep up','Hurt yourself','Get angry'], ans:0,
+   level:'B2+', freq:'common', writing:true,
+   topics:['Education','Work','Finance','Progress','Planning'],
+   meaning:'"Fall behind" means to fail to keep up with others or with a required pace — to drop below the expected level.',
+   example:'"She fell behind on her coursework after missing two weeks through illness." / "The project has fallen behind schedule due to supply delays."',
+   usage:'<strong>Usage tip:</strong> Common in educational, financial, and business writing. "Fall behind on payments" is a standard financial phrase. The opposite is "keep up" or "stay on track."'},
+  {q:'If something "falls through" it _____.', opts:['Happens perfectly','Explodes','Fails to happen'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Planning','Deals','Relationships'],
+   meaning:'"Fall through" means a plan, deal, or arrangement fails to be completed — often at a late and disappointing stage.',
+   example:'"Our plans to move abroad fell through when we couldn\'t sell the house." / "The merger fell through at the last moment."',
+   usage:'<strong>Usage tip:</strong> Always carries disappointment. Extremely common in business journalism. "The deal fell through" is one of the most frequently used idioms in business writing.'},
+  {q:'"Far and wide" means _____.', opts:['In a limited area','Everywhere','At one time'], ans:1,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Travel','Media','Events','Reach','Literary English'],
+   meaning:'"Far and wide" means across a very large area — in many different and distant places.',
+   example:'"People came from far and wide to attend the festival." / "News of the discovery spread far and wide within hours."',
+   usage:'<strong>Usage tip:</strong> More literary and emphatic than "everywhere." Common in formal and creative writing. Often paired with "spread," "search," "travel," and "come from."'},
+  {q:'"Fat chance" means _____.', opts:['Very lucky','No possibility','Unlucky'], ans:1,
+   level:'C1', freq:'common', writing:false,
+   topics:['Sarcasm','Informal Opinion','Humour'],
+   meaning:'"Fat chance" is ironic — it sounds positive but means there is absolutely no chance at all.',
+   example:'"Fat chance he\'ll agree to a pay cut!" / "You think she\'ll apologise first? Fat chance."',
+   usage:'<strong>Usage tip:</strong> Pure sarcasm. The "fat" ironically suggests a large chance, but means the opposite. Informal; used for comic or dismissive effect. Never use in formal writing.'},
+  {q:'If it\'s a "feather in your cap" it means it\'s _____.', opts:['A problem','Cowardly','An honor'], ans:2,
+   level:'C1', freq:'old-fashioned', writing:true,
+   topics:['Achievement','Career','Recognition','Academic Life'],
+   meaning:'A "feather in your cap" is an achievement you can be proud of — a recognised mark of honour and success.',
+   example:'"Winning the award was a real feather in her cap." / "Getting published in that journal is a feather in any researcher\'s cap."',
+   usage:'<strong>Usage tip:</strong> From the practice of warriors adding feathers to their caps for acts of bravery. Slightly old-fashioned but still used in formal and written contexts, especially in academic and professional settings.'},
+  {q:'If you are "fed up" you have _____.', opts:['Had enough','Eaten enough','Drunk too much'], ans:0,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Emotion','Work','Relationships','Frustration'],
+   meaning:'"Fed up" means to be completely tired of something — to have reached your limit of tolerance.',
+   example:'"I\'m fed up with commuting two hours every day." / "She was fed up with his constant excuses and ended the relationship."',
+   usage:'<strong>Usage tip:</strong> Conveys strong frustration. Usually followed by "with." Stronger than "annoyed" but softer than "furious." Informal; avoid in formal academic writing.'},
+  {q:'If you "feel like" something you _____.', opts:['Want to touch something','Don\'t like something','Want to do something'], ans:2,
+   level:'B2+', freq:'common', writing:false,
+   topics:['Everyday Conversation','Desire','Preference'],
+   meaning:'"Feel like" means to have a desire or inclination to do or have something at a particular moment.',
+   example:'"I feel like having a pizza tonight." / "I don\'t feel like going to the gym today — I\'m exhausted."',
+   usage:'<strong>Usage tip:</strong> "Feel like doing something" = want to do it. "Feel like something" = want to have it. Note: "I feel like you\'re not listening" means "I get the impression" — a different usage. Informal.'},
+  {q:'To "feel out" means to _____.', opts:['Test an idea','Tell a secret','Hide something'], ans:0,
+   level:'C1', freq:'less-common', writing:true,
+   topics:['Negotiation','Business','Psychology','Social Skills'],
+   meaning:'"Feel out" means to carefully and cautiously test someone\'s opinion or reaction before committing to an action.',
+   example:'"Let me feel out the board\'s reaction before we go public." / "He felt out his boss\'s mood before asking for the day off."',
+   usage:'<strong>Usage tip:</strong> More subtle than "ask directly" — involves indirect probing. Similar to "sound out." Used in professional contexts. Suitable for semi-formal writing.'},
+  {q:'To "gather in" means to _____.', opts:['Collect','Give out','Organize'], ans:0,
+   level:'C1', freq:'old-fashioned', writing:true,
+   topics:['Agriculture','Collection','Resources','Literary English'],
+   meaning:'"Gather in" means to collect and bring together resources, crops, or people from various places.',
+   example:'"Farmers gather in the harvest before the first frost of autumn." / "The organisation gathers in donations from across the country."',
+   usage:'<strong>Usage tip:</strong> Most common in agricultural contexts ("gather in the harvest"). Slightly old-fashioned in general usage but appropriate in formal and literary writing.'},
+  {q:'The "gift of the gab" means you are _____.', opts:['Experienced','Very intelligent','Skilled in talking'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Communication','Personality','Business','Sales','Public Speaking'],
+   meaning:'The "gift of the gab" means a natural talent for speaking fluently, persuasively, and confidently.',
+   example:'"He\'s got the gift of the gab — he could sell ice to penguins." / "She has the gift of the gab, perfect for client-facing roles."',
+   usage:'<strong>Usage tip:</strong> "Gab" = idle or fluent talk. Usually a compliment, but can imply someone talks too much. Irish and British English in origin. Suitable for semi-formal writing and profiles.'},
+  {q:'To "gloss over" means to _____.', opts:['Encourage','Praise','Try to hide'], ans:2,
+   level:'C1', freq:'common', writing:true,
+   topics:['Business','Politics','Communication','Ethics','Media'],
+   meaning:'"Gloss over" means to deal with an issue superficially — to avoid examining it honestly by passing over it quickly.',
+   example:'"The report glossed over the company\'s financial losses." / "He gave a speech that glossed over the real problems."',
+   usage:'<strong>Usage tip:</strong> The "gloss" suggests a shiny surface hiding what lies beneath. Common in political, journalistic, and academic writing. Similar to "brush under the carpet."'},
+  {q:'"To go like clockwork" means to _____.', opts:['Run smoothly','Go crazy','Cost a lot of money'], ans:0,
+   level:'C1', freq:'common', writing:true,
+   topics:['Events','Business','Planning','Project Management'],
+   meaning:'"Go like clockwork" means to happen exactly as planned — with perfect efficiency and no problems.',
+   example:'"The wedding ceremony went like clockwork." / "If everything goes like clockwork, we\'ll finish ahead of schedule."',
+   usage:'<strong>Usage tip:</strong> The clockwork metaphor captures precision and reliability. Common in journalism and business writing. Suitable for formal and semi-formal contexts.'},
+  {q:'A "golf widow" is a woman who is _____.', opts:['Left at home when her husband plays golf','In charge of the house','Not married'], ans:0,
+   level:'C1', freq:'least-common', writing:false,
+   topics:['Relationships','Leisure','British Culture','Humour'],
+   meaning:'A "golf widow" is a woman whose husband is so devoted to golf that she is frequently left alone.',
+   example:'"Every weekend he\'s on the course — I\'ve become a golf widow!" / "She joked that she was a golf widow, but you could tell it frustrated her."',
+   usage:'<strong>Usage tip:</strong> Humorous and ironic. The "widow" reflects how alone and neglected she feels. The concept extends to any obsessive hobby: "football widow," "gaming widow." Informal; British in origin.'}
+];
+
+var answered=0,correct=0,wrong=0;
+var userAnswers=new Array(T).fill(null);
+
+function freqTag(f){
+  if(f==='common')      return '<span class="tag tag-common">✓ Common</span>';
+  if(f==='less-common') return '<span class="tag tag-less">● Less Common</span>';
+  if(f==='least-common')return '<span class="tag tag-least">△ Least Common</span>';
+  if(f==='old-fashioned')return '<span class="tag tag-old">☆ Old-Fashioned</span>';
+  return '';
+}
+function buildTagRow(q){
+  var h='<div class="exp-tag-row">';
+  h+='<span class="tag tag-level">'+q.level+'</span>';
+  h+=freqTag(q.freq);
+  if(q.writing) h+='<span class="tag tag-writing">✎ Writing</span>';
+  for(var i=0;i<q.topics.length;i++) h+='<span class="tag tag-topic">'+q.topics[i]+'</span>';
+  h+='</div>';return h;
+}
+
+function updateStats(){
+  var pct=Math.round((answered/T)*100);
+  document.getElementById('s-ans').textContent=answered+'/65';
+  document.getElementById('s-cor').textContent=correct;
+  document.getElementById('s-wrg').textContent=wrong;
+  document.getElementById('pbar').style.width=pct+'%';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  if(answered===T) showResult();
+}
+
+function getGrade(s){
+  var p=s/T*100;
+  if(p>=90) return '🏆 Exceptional — you have mastered these idioms.';
+  if(p>=75) return '⭐ Great work — strong command of English idioms.';
+  if(p>=60) return '💪 Solid effort — keep practising to improve.';
+  return '📚 Keep going — idioms take time and repetition to master.';
+}
+
+function showResult(){
+  var sec=document.getElementById('result');
+  var pct=Math.round(correct/T*100);
+  var expHtml='<div class="exp-section"><div class="exp-title">Full Explanations — All 65 Idioms</div>';
+  for(var i=0;i<qs.length;i++){
+    var q=qs[i];
+    var ok=userAnswers[i]===q.ans;
+    expHtml+='<div class="exp-item">'+
+      '<div class="exp-num '+(ok?'c':'w')+'">'+(i+1)+'</div>'+
+      '<div class="exp-body">'+
+      '<div class="exp-idiom">'+q.q.replace('_____.','').trim()+'</div>'+
+      buildTagRow(q)+
+      '<div class="exp-answer">Correct answer: '+q.opts[q.ans]+'</div>'+
+      '<div class="exp-meaning">'+q.meaning+'</div>'+
+      '<div class="exp-example">'+q.example+'</div>'+
+      '<div class="exp-usage">'+q.usage+'</div>'+
+      '</div></div>';
+  }
+  expHtml+='</div>';
+
+  sec.style.display='block';
+  sec.innerHTML=
+    '<div class="result-top">'+
+    '<div class="result-score">'+correct+'/65</div>'+
+    '<div class="result-pct">'+pct+'% correct</div>'+
+    '<div class="result-grade">'+getGrade(correct)+'</div>'+
+    '<div class="result-actions"><button class="btn-primary" onclick="restart()">Try Again</button></div>'+
+    '</div>'+expHtml;
+
+  sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function restart(){
+  answered=0;correct=0;wrong=0;
+  userAnswers=new Array(T).fill(null);
+  updateStats();
+  document.getElementById('result').style.display='none';
+  renderQuestions();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderQuestions(){
+  var c=document.getElementById('questions');
+  c.innerHTML='';
+  var L=['A','B','C'];
+  for(var i=0;i<qs.length;i++){
+    var q=qs[i];
+    var opts='';
+    for(var j=0;j<q.opts.length;j++){
+      opts+='<button class="opt" id="o-'+i+'-'+j+'" onclick="choose('+i+','+j+')">'+
+        '<span class="opt-key">'+L[j]+'</span>'+
+        '<span>'+q.opts[j]+'</span></button>';
+    }
+    var d=document.createElement('div');
+    d.className='qcard';d.id='qc-'+i;
+    d.innerHTML=
+      '<div class="qnum"><span class="qnum-dot"></span>Question '+(i+1)+' of 65</div>'+
+      '<div class="qtext">'+q.q+'</div>'+
+      '<div class="opts" id="opts-'+i+'">'+opts+'</div>'+
+      '<div class="fb" id="fb-'+i+'"></div>';
+    c.appendChild(d);
+  }
+}
+
+function choose(qi,ch){
+  var q=qs[qi];
+  var card=document.getElementById('qc-'+qi);
+  var btns=document.querySelectorAll('#opts-'+qi+' .opt');
+  var fb=document.getElementById('fb-'+qi);
+  for(var b=0;b<btns.length;b++) btns[b].disabled=true;
+  var ok=ch===q.ans;
+  userAnswers[qi]=ch;
+  btns[ch].classList.add(ok?'correct':'wrong');
+  if(!ok) btns[q.ans].classList.add('reveal');
+  card.classList.add(ok?'ok':'ng');
+  fb.style.display='block';
+  fb.className='fb '+(ok?'ok':'ng');
+  fb.textContent=ok?'✓ Correct!':'✗ Wrong — the correct answer is "'+q.opts[q.ans]+'".';
+  answered++;
+  if(ok) correct++; else wrong++;
+  updateStats();
+}
+
+renderQuestions();
+updateStats();
+</script>
+</body>
+</html>
